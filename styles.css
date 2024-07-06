@@ -1,0 +1,52 @@
+body {
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#bookshelf-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid 5px;
+  height: 101vh;
+  width: 800px;
+  align-self: center;
+}
+#bookshelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  border: rgb(0, 0, 0) solid 5px;
+  height: 101vh;
+  width: 800px;
+  align-self: center;
+  padding-top: 30px;
+  gap: 50px;
+}
+.shelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+}
+.book-container {
+  display: flex;
+  background-color: antiquewhite;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+}
+.shelf-support {
+  width: 710px;
+  height: 2vh;
+  border: rgb(0, 0, 0) solid 5px;
+}
+.book {
+  border: rgb(73, 73, 73) solid 3px;
+  width: 2.5vw;
+  height: 23vh;
+}
