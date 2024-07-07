@@ -1,9 +1,20 @@
 body {
+  overflow: hidden;
+}
+#bookshelf-container {
   margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+}
+#add-book {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 10%;
+  top: 50%;
 }
 #bookshelf-border {
   display: flex;
@@ -35,18 +46,28 @@ body {
 }
 .book-container {
   display: flex;
-  background-color: antiquewhite;
   height: 100%;
   width: 100%;
-  padding: 0;
 }
 .shelf-support {
   width: 710px;
-  height: 2vh;
+  height: 8%;
   border: rgb(0, 0, 0) solid 5px;
 }
 .book {
   border: rgb(73, 73, 73) solid 3px;
-  width: 2.5vw;
-  height: 23vh;
+  width: calc(100% / 6);
+  height: 99%;
+}
+
+/*Dialog Modal */
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
 }

@@ -7,29 +7,53 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="bookshelf-border">
-      <div id="bookshelf">
-        <div class="shelf">
-          <div class="book-container">
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
-            <div class="book">Book Title</div>
+    <div id="bookshelf-container">
+      <button id="add-book">Add Book</button>
+      <div id="bookshelf-border">
+        <div id="bookshelf">
+          <div class="shelf">
+            <div class="book-container">
+              <div class="book">The Lord of the Rings</div>
+              <div class="book">The Sea of Monsters</div>
+              <div class="book">The Great Gatsby</div>
+              <div class="book">Book Title</div>
+              <div class="book">Book Title</div>
+            </div>
+            <div class="shelf-support"></div>
           </div>
-          <div class="shelf-support"></div>
-        </div>
-        <div class="shelf">
-          <div class="book-container"></div>
-          <div class="shelf-support"></div>
-        </div>
-        <div class="shelf">
-          <div class="book-container"></div>
-          <div class="shelf-support"></div>
+          <div class="shelf">
+            <div class="book-container"></div>
+            <div class="shelf-support"></div>
+          </div>
+          <div class="shelf">
+            <div class="book-container"></div>
+            <div class="shelf-support"></div>
+          </div>
         </div>
       </div>
     </div>
+    <dialog>
+      <button autofocus>Close</button>
+      <form action="" method="dialog" id="book-form">
+        <label for="title">Book Title</label>
+        <input type="text" name="title" id="title" required />
+
+        <label for="author">Book Author</label>
+        <input type="text" name="author" id="author" required />
+
+        <label for="dateOfPublication">Date of Publication</label>
+        <input
+          type="date"
+          name="dateOfPublication"
+          id="dateOfPublication"
+          required
+        />
+
+        <label for="numberOfPages">Number of Pages</label>
+        <input type="number" name="numberOfPages" id="numberOfPages" required />
+        <button type="submit" formmethod="dialog">Add Book</button>
+      </form>
+    </dialog>
+    <script src="script.js"></script>
   </body>
 </html>
