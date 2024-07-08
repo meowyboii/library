@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -27,8 +33,8 @@
       </div>
     </div>
     <dialog id="add-book-form">
-      <button autofocus>Close</button>
       <form action="" method="dialog" id="book-form">
+        <h3>Add a New Book</h3>
         <label for="title">Book Title</label>
         <input type="text" name="title" id="title" required />
 
@@ -44,8 +50,9 @@
         />
 
         <label for="numberOfPages">Number of Pages</label>
-        <input type="number" name="numberOfPages" id="numberOfPages" required />
+        <input type="number" name="numberOfPages" id="numberOfPages" required />  
         <button type="submit" formmethod="dialog">Add Book</button>
+        <button autofocus id ="close-add">Close</button>
       </form>
     </dialog>
     <dialog id="book-info">
@@ -55,8 +62,8 @@
         <p></p>
         <p></p>
       </div>
-      <button autofocus>Close</button>
       <button id="remove-book" formmethod="dialog">Remove This Book</button>
+      <button autofocus id ="close-book">Close</button>
     </dialog>
     <script src="script.js"></script>
   </body>

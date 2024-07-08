@@ -49,11 +49,11 @@ class Book {
 
 const addBookForm = document.querySelector("#add-book-form");
 const addBookButton = document.querySelector("#add-book");
-const closeAddBook = document.querySelector("#add-book-form button");
+const closeAddBook = document.querySelector("#close-add");
 
 const bookInfo = document.querySelector("#book-info");
 const removeBookButton = document.querySelector("#remove-book");
-const closeBookInfo = document.querySelector("#book-info button");
+const closeBookInfo = document.querySelector("#close-book");
 
 const bookContainers = document.querySelectorAll(".book-container");
 
@@ -116,10 +116,13 @@ const showBooks = () => {
 // "Show the dialog" button opens the dialog modally
 addBookButton.addEventListener("click", () => {
   const books = document.querySelectorAll(".book");
-  if (books.length > 18) {
-    console.log("The library is full");
+  if (books.length >= 18) {
+    alert(
+      "The library is already full!\nRemove some books if you want to add another."
+    );
+  } else {
+    addBookForm.showModal();
   }
-  addBookForm.showModal();
 });
 
 // "Close" button closes the dialog
