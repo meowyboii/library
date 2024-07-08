@@ -12,13 +12,7 @@
       <div id="bookshelf-border">
         <div id="bookshelf">
           <div class="shelf">
-            <div class="book-container">
-              <div class="book">The Lord of the Rings</div>
-              <div class="book">The Sea of Monsters</div>
-              <div class="book">The Great Gatsby</div>
-              <div class="book">Book Title</div>
-              <div class="book">Book Title</div>
-            </div>
+            <div class="book-container"></div>
             <div class="shelf-support"></div>
           </div>
           <div class="shelf">
@@ -32,7 +26,7 @@
         </div>
       </div>
     </div>
-    <dialog>
+    <dialog id="add-book-form">
       <button autofocus>Close</button>
       <form action="" method="dialog" id="book-form">
         <label for="title">Book Title</label>
@@ -53,6 +47,16 @@
         <input type="number" name="numberOfPages" id="numberOfPages" required />
         <button type="submit" formmethod="dialog">Add Book</button>
       </form>
+    </dialog>
+    <dialog id="book-info">
+      <div id="book-content">
+        <h3></h4>
+        <h4></h5>
+        <p></p>
+        <p></p>
+      </div>
+      <button autofocus>Close</button>
+      <button id="remove-book" formmethod="dialog">Remove This Book</button>
     </dialog>
     <script src="script.js"></script>
   </body>

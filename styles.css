@@ -1,5 +1,13 @@
+* {
+  margin: 0;
+}
 body {
   overflow: hidden;
+}
+dialog {
+  width: 50%;
+  align-self: center;
+  justify-self: center;
 }
 #bookshelf-container {
   margin-top: -10px;
@@ -15,6 +23,10 @@ body {
   transform: translate(-50%, -50%);
   left: 10%;
   top: 50%;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: antiquewhite;
+  cursor: pointer;
 }
 #bookshelf-border {
   display: flex;
@@ -55,9 +67,14 @@ body {
   border: rgb(0, 0, 0) solid 5px;
 }
 .book {
+  display: grid;
+  align-items: center;
   border: rgb(73, 73, 73) solid 3px;
   width: calc(100% / 6);
   height: 99%;
+  background-color: aliceblue;
+  text-align: center;
+  cursor: pointer;
 }
 
 /*Dialog Modal */
