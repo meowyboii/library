@@ -130,12 +130,14 @@ closeAddBook.addEventListener("click", () => {
   addBookForm.close();
 });
 
+let currentBookIndex = -1;
+
 const openBookInfo = (event) => {
   // Check if the clicked element is inside a .book element
   const bookElement = event.target.closest(".book");
   if (bookElement) {
-    const dataIndex = bookElement.getAttribute("data-index");
-    const currentBook = library[dataIndex];
+    currentBookIndex = bookElement.getAttribute("data-index");
+    const currentBook = library[currentBookIndex];
 
     const title = document.querySelector("#book-content h3");
     title.textContent = `Title: ${currentBook.title}`;
@@ -158,6 +160,16 @@ const openBookInfo = (event) => {
 bookContainers.forEach((container) => {
   // Attach event listener to each child with class "book"
   container.addEventListener("click", openBookInfo);
+});
+
+//Remove a book in the library array given an index
+removeBookButton.addEventListener("click", (e) => {
+  if (currentBookIndex > -1 && currentBookIndex < library.length) {
+    library.splice(currentBookIndex, 1);
+    currentBookIndex = -1; // Reset the current book index
+    bookInfo.close();
+    showBooks(); // Refresh the list of books
+  }
 });
 
 // "Close" button closes the dialog
