@@ -1,41 +1,4 @@
-//Initialize few books present in the library
-const library = [
-  {
-    title: "The Lord of the Rings",
-    author: "The Author",
-    dateOfPublication: "2002-08-04",
-    numberOfPages: 200,
-    haveRead: false,
-  },
-  {
-    title: "The Sea of Monsters",
-    author: "The Author is an Author",
-    dateOfPublication: "2002-08-04",
-    numberOfPages: 200,
-    haveRead: false,
-  },
-  {
-    title: "The Great Gatsby",
-    author: "The Author",
-    dateOfPublication: "2002-08-04",
-    numberOfPages: 200,
-    haveRead: false,
-  },
-  {
-    title: "The Lord of the Rings",
-    author: "The Author",
-    dateOfPublication: "2002-08-04",
-    numberOfPages: 200,
-    haveRead: false,
-  },
-  {
-    title: "The Sea of Monsters",
-    author: "The Author",
-    dateOfPublication: "2002-08-04",
-    numberOfPages: 200,
-    haveRead: false,
-  },
-];
+const library = [];
 
 class Book {
   constructor(title, author, dateOfPublication, numberOfPages, haveRead) {
@@ -46,6 +9,9 @@ class Book {
     this.haveRead = haveRead;
   }
 }
+Book.prototype.toggleReadStatus = function () {
+  this.haveRead = !this.haveRead;
+};
 
 const addBookForm = document.querySelector("#add-book-form");
 const addBookButton = document.querySelector("#add-book");
@@ -57,8 +23,21 @@ const closeBookInfo = document.querySelector("#close-book");
 
 const bookContainers = document.querySelectorAll(".book-container");
 
+const toggleReadButton = document.querySelector("#toggle-read");
+
 //Show books available in library
 document.addEventListener("DOMContentLoaded", function () {
+  //Initialize 5 books
+  for (let i = 0; i < 5; i++) {
+    const book = new Book(
+      "The Lord of the Rings",
+      "Tim Midel",
+      "2002-08-04",
+      300,
+      false
+    );
+    library.push(book);
+  }
   showBooks();
 });
 
@@ -153,6 +132,16 @@ const openBookInfo = (event) => {
     const numberOfPages = paragraphs[1];
     numberOfPages.textContent = `Number of Pages: ${currentBook.numberOfPages}`;
 
+    const haveReadStatus = paragraphs[2];
+    const readButton = document.querySelector("#toggle-read");
+    if (currentBook.haveRead) {
+      haveReadStatus.textContent = "Status: Read";
+      readButton.textContent = "Mark as Not Read";
+    } else {
+      haveReadStatus.textContent = "Status: Not Read";
+      readButton.textContent = "Mark as Read";
+    }
+
     bookInfo.showModal();
   }
 };
@@ -163,7 +152,7 @@ bookContainers.forEach((container) => {
 });
 
 //Remove a book in the library array given an index
-removeBookButton.addEventListener("click", (e) => {
+removeBookButton.addEventListener("click", () => {
   if (currentBookIndex > -1 && currentBookIndex < library.length) {
     library.splice(currentBookIndex, 1);
     currentBookIndex = -1; // Reset the current book index
@@ -175,4 +164,11 @@ removeBookButton.addEventListener("click", (e) => {
 // "Close" button closes the dialog
 closeBookInfo.addEventListener("click", () => {
   bookInfo.close();
+});
+
+toggleReadButton.addEventListener("click", () => {
+  if (currentBookIndex > -1 && currentBookIndex < library.length) {
+    library[currentBookIndex].toggleReadStatus();
+    bookInfo.close();
+  }
 });

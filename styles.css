@@ -49,6 +49,11 @@ button {
   box-shadow: 1px 3px 4px 2px rgba(36, 36, 36, 0.103);
   scale: 1.01;
 }
+.book:hover {
+  transform: translateY(-2px);
+  box-shadow: 1px 3px 4px 2px rgba(36, 36, 36, 0.103);
+  scale: 1.01;
+}
 #bookshelf-border {
   display: flex;
   align-items: center;
@@ -90,7 +95,7 @@ button {
 .book {
   display: grid;
   align-items: center;
-  border: rgb(73, 73, 73) solid 3px;
+  border: black solid 3px;
   padding: 1px;
   width: calc(100% / 6);
   height: 98%;
